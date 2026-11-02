@@ -15,7 +15,7 @@ jobs:
       - name: Install ESP32 core
         run: |
           arduino-cli core update-index --additional-urls "$CORE_URL"
-          arduino-cli core install esp32:esp32 --additional-urls "$CORE_URL"
+          arduino-cli core install esp32:esp32@3.3.12 --additional-urls "$CORE_URL"
         env:
           CORE_URL: https://espressif.github.io/arduino-esp32/package_esp32_index.json
       - name: Compile dongle firmware
