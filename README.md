@@ -9,7 +9,7 @@ Spec: [Grid Bridge and Roost Spec](https://claude.ai/artifact/FeVuEiPemRL3xESZMP
 | `firmware/dongle/` | One dongle firmware, with the role saved as a setting | `GameDongle` copied in, unchanged |
 | `bridge-app/` | C# tray app for the AAC device | Empty |
 | `web/` | Setup page, later Roost, on its own GitHub Pages URL | Empty |
-| `docs/` | Protocol and notes | Empty |
+| `docs/` | Phase pass criteria, hardware test results, later the protocol | Started |
 
 **First:** the phase 0 test app in `bridge-app/`. It checks that the app can be installed on a real Grid Pad, starts at login, and reliably catches Grid 3's hotkeys and clipboard.
 
