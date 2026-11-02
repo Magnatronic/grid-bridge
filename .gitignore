@@ -1,0 +1,11 @@
+.claude/
+*.part
+
+# Arduino
+build/
+
+# C#
+bin/
+obj/
+.vs/
+*.user
