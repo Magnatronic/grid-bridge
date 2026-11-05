@@ -176,7 +176,7 @@ sealed class TrayApp : ApplicationContext
     const int TestHotkeyCount = 4;
     const int LiveHotkeyId = 4;
     const int ProbeHotkeyId = 5;
-    const long ClipboardRepeatMs = 250;
+    const long ClipboardRepeatMs = 1000;
 
     readonly NotifyIcon _icon;
     readonly ToolStripMenuItem _counts = new() { Enabled = false };
@@ -291,7 +291,9 @@ sealed class TrayApp : ApplicationContext
     void OnKey(int vk, bool injected)
     {
         _liveKeys++;
-        _pendingKeys.Add($"{(Keys)vk} injected={injected} count={_liveKeys}");
+        // Software-sent keys are what's being tested. Naming physical keys would log the person's own typing.
+        string key = injected ? $"{(Keys)vk} injected=True" : "physical";
+        _pendingKeys.Add($"{key} count={_liveKeys}");
     }
 
     void FlushKeys()
